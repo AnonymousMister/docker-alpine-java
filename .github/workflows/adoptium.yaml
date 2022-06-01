@@ -60,7 +60,7 @@ jobs:
           uses: docker/build-push-action@v2
           with:
             context: adoptium/
-            file: ./Dockerfile-8u332
+            file: Dockerfile-8u332
             platforms: linux/amd64
             push: true
             tags:  |
