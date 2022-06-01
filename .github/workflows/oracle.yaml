@@ -37,7 +37,7 @@ jobs:
             tags: |
               wumingq/oraclejdk:latest
               registry.cn-hangzhou.aliyuncs.com/wumingq/oraclejdk:latest
-    his:
+  his:
       runs-on: ubuntu-latest
       steps:
         <<: *steps-cache
