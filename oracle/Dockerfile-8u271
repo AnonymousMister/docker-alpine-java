@@ -1,0 +1,5 @@
+FROM wumingq/alpine-glibc
+LABEL image_name="alpine-OracleJDK8-tini"
+COPY --from=wumingq/oraclejdkstog:8u271 /opt/java/jdk /opt/java/jdk
+ENV JAVA_HOME /opt/java/jdk
+ENV PATH ${PATH}:${JAVA_HOME}/bin
