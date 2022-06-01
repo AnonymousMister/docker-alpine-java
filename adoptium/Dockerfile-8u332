@@ -1,4 +1,4 @@
-FROM wumingq/alpine-glibc
+FROM wumingq/alpine-glibc:latest
 LABEL image_name="alpine-adoptium8-tini"
 RUN set -eux; \
     ARCH="$(apk --print-arch)"; \

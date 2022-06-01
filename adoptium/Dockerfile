@@ -1,4 +1,4 @@
-FROM  wumingq/alpine-glibc
+FROM  wumingq/alpine-glibc:latest
 LABEL image_name="alpine-adoptium17-tini"
 # https://adoptium.net
 RUN set -eux; \
