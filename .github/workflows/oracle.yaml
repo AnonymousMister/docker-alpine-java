@@ -59,8 +59,8 @@ jobs:
         - name: Build 8u271
           uses: docker/build-push-action@v2
           with:
-            context: oracle/*
-            file: Dockerfile-8u271
+            context: oracle/
+            file: oracle/Dockerfile-8u271
             platforms: linux/amd64
             push: true
             tags: |
