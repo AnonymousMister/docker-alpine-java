@@ -63,8 +63,8 @@ jobs:
             platforms: linux/amd64
             push: true
             tags:  |
-            wumingq/adoptiumjdk:8u332-jdk
-            registry.cn-hangzhou.aliyuncs.com/wumingq/adoptiumjdk:8u332-jdk
+              wumingq/adoptiumjdk:8u332-jdk
+              registry.cn-hangzhou.aliyuncs.com/wumingq/adoptiumjdk:8u332-jdk
 
 
 
