@@ -32,7 +32,9 @@ jobs:
             platforms: linux/amd64
             push: true
             tags: |
+              wumingq/oraclejdk:8u291-jdk
               wumingq/oraclejdk:latest
+              registry.cn-hangzhou.aliyuncs.com/wumingq/oraclejdk:8u291-jdk
               registry.cn-hangzhou.aliyuncs.com/wumingq/oraclejdk:latest
   his:
       runs-on: ubuntu-latest
