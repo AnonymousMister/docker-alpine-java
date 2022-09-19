@@ -1,6 +1,5 @@
 name: oracle-JDK
 on:
-  workflow_dispatch:
   push:
     paths:
       - 'oracle/*'

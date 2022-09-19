@@ -1,6 +1,5 @@
 name: adoptium-JDK
 on:
-  workflow_dispatch:
   push:
     paths:
        - 'adoptium/*'
