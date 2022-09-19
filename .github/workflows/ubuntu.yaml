@@ -1,5 +1,6 @@
 name: ubuntu
 on:
+  workflow_dispatch:
   push:
     paths:
       - 'ubuntu/*'
