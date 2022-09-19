@@ -1,4 +1,4 @@
-name: ubuntu
+name: debian
 on:
   workflow_dispatch:
   push:
@@ -28,12 +28,11 @@ jobs:
       - name: Build and Push Docker Iamge
         uses: docker/build-push-action@v2
         with:
-          context: ubuntu/
+          context: debian/
           platforms: linux/amd64,linux/arm64/v8,linux/arm/v7
           push: true
           tags: |
-            wumingq/ubuntu:18.04
-            wumingq/ubuntu:latest
-            registry.cn-hangzhou.aliyuncs.com/wumingq/ubuntu:18.04
-            registry.cn-hangzhou.aliyuncs.com/wumingq/ubuntu:latest
-
+            wumingq/debian:18.04
+            wumingq/debian:latest
+            registry.cn-hangzhou.aliyuncs.com/wumingq/debian:18.04
+            registry.cn-hangzhou.aliyuncs.com/wumingq/debian:latest
