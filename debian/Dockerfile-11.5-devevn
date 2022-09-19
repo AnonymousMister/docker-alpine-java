@@ -1,0 +1,4 @@
+FROM debian:11.5
+RUN apt-get update && apt-get install -y init locales vim git openssh-server && \
+     mkdir -p /var/run/sshd && apt-get clean all
+ENTRYPOINT ["/usr/sbin/sshd"]

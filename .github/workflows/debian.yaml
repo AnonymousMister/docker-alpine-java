@@ -29,10 +29,11 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: debian/
+          file: debian/Dockerfile-11.5-devevn
           platforms: linux/amd64,linux/arm64/v8,linux/arm/v7
           push: true
           tags: |
-            wumingq/debian:11.5
-            wumingq/debian:latest
-            registry.cn-hangzhou.aliyuncs.com/wumingq/debian:11.5
-            registry.cn-hangzhou.aliyuncs.com/wumingq/debian:latest
+            wumingq/debian:11.5-evn
+            wumingq/debian:latest-evn
+            registry.cn-hangzhou.aliyuncs.com/wumingq/debian:11.5-evn
+            registry.cn-hangzhou.aliyuncs.com/wumingq/debian:latest-evn
