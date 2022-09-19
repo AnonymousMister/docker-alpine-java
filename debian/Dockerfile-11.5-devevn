@@ -1,9 +1,9 @@
 FROM debian:11.5
-RUN apt-get update && apt-get install -y init locales vim git openssh-server ntpdate curl wget tar && \
+RUN apt-get update && apt-get install -y init locales vim git openssh-server ntpdate curl tar && \
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash && \
     curl -fsSL https://get.pnpm.io/install.sh | sh - &&\
     curl -sLk https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh &&\
-     mkdir -p /var/run/sshd && apt-get clean all
+    mkdir -p /var/run/sshd && apt-get clean all
 #ssh-keygen -t rsa -N '' -f ~/.ssh/id_rsa -q
 #~/.ssh/authorized_keys
 #-v /sys/fs/cgroup:/sys/fs/cgroup:ro
