@@ -32,7 +32,7 @@ jobs:
           platforms: linux/amd64,linux/arm64/v8,linux/arm/v7
           push: true
           tags: |
-            wumingq/debian:18.04
+            wumingq/debian:11.5
             wumingq/debian:latest
-            registry.cn-hangzhou.aliyuncs.com/wumingq/debian:18.04
+            registry.cn-hangzhou.aliyuncs.com/wumingq/debian:11.5
             registry.cn-hangzhou.aliyuncs.com/wumingq/debian:latest
