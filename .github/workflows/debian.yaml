@@ -25,18 +25,18 @@ jobs:
           registry: registry.cn-hangzhou.aliyuncs.com
           username: ${{ secrets.MY_DOCKER_HUB_USN }}
           password: ${{ secrets.MY_DOCKER_HUB_PWD }}
-      - name: 打包标准轻量环境
-        uses: docker/build-push-action@v2
-        with:
-          context: debian/
-          file: debian/Dockerfile-evn-slim
-          platforms: linux/amd64
-          push: true
-          tags: |
-            wumingq/debian:11.5-evn-slim
-            wumingq/debian:latest-evn-slim
-            registry.cn-hangzhou.aliyuncs.com/wumingq/debian:11.5-evn-slim
-            registry.cn-hangzhou.aliyuncs.com/wumingq/debian:latest-evn-slim
+#      - name: 打包标准轻量环境
+#        uses: docker/build-push-action@v2
+#        with:
+#          context: debian/
+#          file: debian/Dockerfile-evn-slim
+#          platforms: linux/amd64
+#          push: true
+#          tags: |
+#            wumingq/debian:11.5-evn-slim
+#            wumingq/debian:latest-evn-slim
+#            registry.cn-hangzhou.aliyuncs.com/wumingq/debian:11.5-evn-slim
+#            registry.cn-hangzhou.aliyuncs.com/wumingq/debian:latest-evn-slim
       - name: 打包标准全量环境
         uses: docker/build-push-action@v2
         with:

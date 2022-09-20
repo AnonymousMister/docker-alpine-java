@@ -1,5 +1,7 @@
 FROM wumingq/debian:11.5-evn-slim
-RUN sdk install  java 8.0.345-tem && sdk install maven && nvm install v14.19.1
+RUN sh /root/.sdkman/bin/sdkman-init.sh && \
+    sh /root/.nvm/nvm.sh && \
+    sdk install  java 8.0.345-tem && sdk install maven && nvm install v14.19.1
 #ssh-keygen -t rsa -N '' -f ~/.ssh/id_rsa -q
 #~/.ssh/authorized_keys
 #-v /sys/fs/cgroup:/sys/fs/cgroup:ro
