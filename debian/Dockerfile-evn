@@ -1,6 +1,7 @@
 FROM wumingq/debian:11.5-evn-slim
 SHELL ["/bin/bash", "-c"]
 RUN source "/root/.sdkman/bin/sdkman-init.sh" && \
+    source "/root/.bashrc" && \
     sdk install  java 8.0.345-tem && sdk install maven && nvm install v14.19.1
 #ssh-keygen -t rsa -N '' -f ~/.ssh/id_rsa -q
 #~/.ssh/authorized_keys
