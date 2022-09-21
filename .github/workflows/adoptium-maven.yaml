@@ -1,8 +1,8 @@
-name: adoptium-JDK
+name: adoptium-maven-JDK
 on:
   push:
     paths:
-      - 'adoptium/Dockerfile'
+      - 'adoptium-maven/Dockerfile'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,17 +24,17 @@ jobs:
           registry: registry.cn-hangzhou.aliyuncs.com
           username: ${{ secrets.MY_DOCKER_HUB_USN }}
           password: ${{ secrets.MY_DOCKER_HUB_PWD }}
-      - name: 构建 jdk 17 最新版本
+      - name: 构建 jdk 17  maven 最新版本
         uses: docker/build-push-action@v2
         with:
-          context: adoptium/
+          context: adoptium-maven/
           platforms: linux/amd64
           push: true
           tags: |
-            wumingq/adoptiumjdk:17.0.4-jdk
-            wumingq/adoptiumjdk:latest
-            registry.cn-hangzhou.aliyuncs.com/wumingq/adoptiumjdk:17.0.4-jdk
-            registry.cn-hangzhou.aliyuncs.com/wumingq/adoptiumjdk:latest
+            wumingq/adoptium-maven:17.0.4-jdk
+            wumingq/adoptium-maven:latest
+            registry.cn-hangzhou.aliyuncs.com/wumingq/adoptium-maven:17.0.4-jdk
+            registry.cn-hangzhou.aliyuncs.com/wumingq/adoptium-maven:latest
 
 
 
