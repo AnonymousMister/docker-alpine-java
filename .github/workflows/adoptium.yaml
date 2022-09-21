@@ -32,9 +32,9 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            wumingq/adoptiumjdk:17.0.3-jdk
+            wumingq/adoptiumjdk:17.0.4-jdk
             wumingq/adoptiumjdk:latest
-            registry.cn-hangzhou.aliyuncs.com/wumingq/adoptiumjdk:17.0.3-jdk
+            registry.cn-hangzhou.aliyuncs.com/wumingq/adoptiumjdk:17.0.4-jdk
             registry.cn-hangzhou.aliyuncs.com/wumingq/adoptiumjdk:latest
   his:
       runs-on: ubuntu-latest
