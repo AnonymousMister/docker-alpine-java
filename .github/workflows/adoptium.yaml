@@ -2,7 +2,8 @@ name: adoptium-JDK
 on:
   push:
     paths:
-      - 'adoptium/Dockerfile'
+      - 'adoptium/Dockerfile-8'
+      - 'adoptium/Dockerfile-17'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -28,6 +29,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: adoptium/
+          file: adoptium/Dockerfile-17
           platforms: linux/amd64
           push: true
           tags: |
@@ -35,7 +37,18 @@ jobs:
             wumingq/adoptiumjdk:latest
             registry.cn-hangzhou.aliyuncs.com/wumingq/adoptiumjdk:17.0.4-jdk
             registry.cn-hangzhou.aliyuncs.com/wumingq/adoptiumjdk:latest
-
+      - name: 构建 jdk 8 最新版本
+        uses: docker/build-push-action@v2
+        with:
+          context: adoptium/
+          file: adoptium/Dockerfile-8
+          platforms: linux/amd64
+          push: true
+          tags: |
+            wumingq/adoptiumjdk:8u345-jdk
+            wumingq/adoptiumjdk:latest
+            registry.cn-hangzhou.aliyuncs.com/wumingq/adoptiumjdk:8u345-jdk
+            registry.cn-hangzhou.aliyuncs.com/wumingq/adoptiumjdk:latest
 
 
 
