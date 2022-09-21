@@ -2,7 +2,7 @@ FROM wumingq/adoptiumjdk:17.0.4-jdk
 LABEL image_name="alpine-adoptium17-maven"
 # https://adoptium.net
 LABEL Liunx="alpine"
-LABEL JDK="adoptium8"
+LABEL JDK="adoptium17"
 LABEL MAVEN="maven3.8.6"
 RUN set -eux; \
     ARCH="$(apk --print-arch)"; \
