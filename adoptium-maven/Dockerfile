@@ -3,13 +3,13 @@ LABEL image_name="alpine-adoptium17-maven"
 # https://adoptium.net
 LABEL Liunx="alpine"
 LABEL JDK="adoptium17"
-LABEL MAVEN="maven3.8.1"
+LABEL MAVEN="maven3.8.6"
 RUN set -eux; \
     ARCH="$(apk --print-arch)"; \
     case "${ARCH}" in \
        amd64|x86_64) \
-         ESUM='0ec48eb515d93f8515d4abe465570dfded6fa13a3ceb9aab8031428442d9912ec20f066b2afbf56964ffe1ceb56f80321b50db73cf77a0e2445ad0211fb8e38d'; \
-         BINARY_URL='https://mirror-hk.koddos.net/apache/maven/maven-3/3.8.1/binaries/apache-maven-3.8.1-bin.tar.gz'; \
+         ESUM='f790857f3b1f90ae8d16281f902c689e4f136ebe584aba45e4b1fa66c80cba826d3e0e52fdd04ed44b4c66f6d3fe3584a057c26dfcac544a60b301e6d0f91c26'; \
+         BINARY_URL='https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz'; \
          ;; \
        *) \
          echo "Unsupported arch: ${ARCH}"; \

@@ -31,10 +31,10 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            wumingq/adoptium-maven:17.0.4-jdk
-            wumingq/adoptium-maven:latest
-            registry.cn-hangzhou.aliyuncs.com/wumingq/adoptium-maven:17.0.4-jdk
-            registry.cn-hangzhou.aliyuncs.com/wumingq/adoptium-maven:latest
+            wumingq/apache-maven:3.8.6-adoptiumjdk17
+            wumingq/apache-maven:latest
+            registry.cn-hangzhou.aliyuncs.com/wumingq/apache-maven:3.8.6-adoptiumjdk17
+            registry.cn-hangzhou.aliyuncs.com/wumingq/apache-maven:latest
 
 
 
