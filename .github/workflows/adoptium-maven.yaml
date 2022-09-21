@@ -2,7 +2,8 @@ name: adoptium-maven-JDK
 on:
   push:
     paths:
-      - 'adoptium-maven/Dockerfile'
+      - 'adoptium-maven/Dockerfile-3.8.6-8'
+      - 'adoptium-maven/Dockerfile-3.8.6-17'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -28,6 +29,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: adoptium-maven/
+          file: adoptium-maven/Dockerfile-3.8.6-17
           platforms: linux/amd64
           push: true
           tags: |
@@ -35,6 +37,16 @@ jobs:
             wumingq/apache-maven:latest
             registry.cn-hangzhou.aliyuncs.com/wumingq/apache-maven:3.8.6-adoptiumjdk17
             registry.cn-hangzhou.aliyuncs.com/wumingq/apache-maven:latest
+      - name: 构建 jdk 8  maven 最新版本
+        uses: docker/build-push-action@v2
+        with:
+          context: adoptium-maven/
+          file: adoptium-maven/Dockerfile-3.8.6-8
+          platforms: linux/amd64
+          push: true
+          tags: |
+            wumingq/apache-maven:3.8.6-adoptiumjdk8
+            registry.cn-hangzhou.aliyuncs.com/wumingq/apache-maven:3.8.6-adoptiumjdk8
 
 
 
