@@ -46,9 +46,7 @@ jobs:
           push: true
           tags: |
             wumingq/adoptiumjdk:8u345-jdk
-            wumingq/adoptiumjdk:latest
             registry.cn-hangzhou.aliyuncs.com/wumingq/adoptiumjdk:8u345-jdk
-            registry.cn-hangzhou.aliyuncs.com/wumingq/adoptiumjdk:latest
 
 
 
