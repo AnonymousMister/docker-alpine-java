@@ -22,7 +22,8 @@ RUN set -eux; \
     cd /opt/java/maven; \
     tar -xf /tmp/maven.tar.gz --strip-components=1; \
     rm -rf /var/cache/apk/*; \
-    rm -rf /tmp/maven.tar.gz;
+    rm -rf /tmp/maven.tar.gz; \
+    mvn -v;
 
 ENV MAVEN_HOME=/opt/java/maven \
     PATH="/opt/java/maven/bin:$PATH"
