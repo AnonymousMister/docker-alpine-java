@@ -23,7 +23,6 @@ RUN set -eux; \
         apk add --update --no-cache  ttf-dejavu fontconfig tini \
             && ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
             &&  rm -rf /var/cache/apk/*
-
 ENV JAVA_HOME=/opt/java/openjdk \
     PATH="/opt/java/openjdk/bin:$PATH"
 
