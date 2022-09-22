@@ -1,8 +1,9 @@
-name: debian
+name: debian-slim
 on:
   push:
     paths:
-      - 'debian/Dockerfile'
+      - 'debian/Dockerfile-evn-slim'
+      - 'debian/Dockerfile-evn'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,16 +25,28 @@ jobs:
           registry: registry.cn-hangzhou.aliyuncs.com
           username: ${{ secrets.MY_DOCKER_HUB_USN }}
           password: ${{ secrets.MY_DOCKER_HUB_PWD }}
-      - name: 打包标准环境
+      - name: 打包标准轻量环境
         uses: docker/build-push-action@v2
         with:
           context: debian/
-          file: debian/Dockerfile
+          file: debian/Dockerfile-evn-slim
           platforms: linux/amd64
           push: true
           tags: |
-            wumingq/debian:11.5
-            wumingq/debian:latest
-            registry.cn-hangzhou.aliyuncs.com/wumingq/debian:11.5
-            registry.cn-hangzhou.aliyuncs.com/wumingq/debian:latest
+            wumingq/debian:11.5-evn-slim
+            wumingq/debian:latest-evn-slim
+            registry.cn-hangzhou.aliyuncs.com/wumingq/debian:11.5-evn-slim
+            registry.cn-hangzhou.aliyuncs.com/wumingq/debian:latest-evn-slim
+      - name: 打包标准全量环境
+        uses: docker/build-push-action@v2
+        with:
+          context: debian/
+          file: debian/Dockerfile-evn
+          platforms: linux/amd64
+          push: true
+          tags: |
+            wumingq/debian:11.5-evn
+            wumingq/debian:latest-evn
+            registry.cn-hangzhou.aliyuncs.com/wumingq/debian:11.5-evn
+            registry.cn-hangzhou.aliyuncs.com/wumingq/debian:latest-evn
 

@@ -1,10 +1,9 @@
-name: debian
+name: docker-login
 on:
-  push:
-    paths:
-      - 'debian/Dockerfile'
+  workflow_call:
+
 jobs:
-  build:
+  reusable_workflow_job:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Dockerfile
@@ -24,16 +23,3 @@ jobs:
           registry: registry.cn-hangzhou.aliyuncs.com
           username: ${{ secrets.MY_DOCKER_HUB_USN }}
           password: ${{ secrets.MY_DOCKER_HUB_PWD }}
-      - name: 打包标准环境
-        uses: docker/build-push-action@v2
-        with:
-          context: debian/
-          file: debian/Dockerfile
-          platforms: linux/amd64
-          push: true
-          tags: |
-            wumingq/debian:11.5
-            wumingq/debian:latest
-            registry.cn-hangzhou.aliyuncs.com/wumingq/debian:11.5
-            registry.cn-hangzhou.aliyuncs.com/wumingq/debian:latest
-

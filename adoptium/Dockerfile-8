@@ -13,7 +13,6 @@ RUN set -eux; \
          exit 1; \
          ;; \
     esac; \
-
     wget -O /tmp/openjdk.tar.gz ${BINARY_URL}; \
     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -; \
     mkdir -p /opt/java/openjdk; \
