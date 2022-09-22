@@ -1,5 +1,6 @@
 FROM  wumingq/debian:11.5
 LABEL image_name="debian-adoptium17-tini"
+LABEL LANG="zh_CN.UTF-8"
 # https://adoptium.net
 RUN set -eux; \
     ARCH="$(dpkg --print-architecture)"; \
