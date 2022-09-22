@@ -4,6 +4,8 @@ on:
     paths:
       - 'adoptium-maven/Dockerfile-3.8.6-8'
       - 'adoptium-maven/Dockerfile-3.8.6-17'
+      - 'adoptium-maven/Dockerfile-debian-3.8.6-8'
+      - 'adoptium-maven/Dockerfile-debian-3.8.6-17'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -47,6 +49,28 @@ jobs:
           tags: |
             wumingq/apache-maven:3.8.6-adoptiumjdk8
             registry.cn-hangzhou.aliyuncs.com/wumingq/apache-maven:3.8.6-adoptiumjdk8
+      - name: 构建 jdk 17  maven 最新版本
+        uses: docker/build-push-action@v2
+        with:
+          context: adoptium-maven/
+          file: adoptium-maven/Dockerfile-debian-3.8.6-17
+          platforms: linux/amd64
+          push: true
+          tags: |
+            wumingq/apache-maven:debian-3.8.6-adoptiumjdk17
+            wumingq/apache-maven:debian-latest
+            registry.cn-hangzhou.aliyuncs.com/wumingq/apache-maven:debian-3.8.6-adoptiumjdk17
+            registry.cn-hangzhou.aliyuncs.com/wumingq/apache-maven:debian-latest
+      - name: 构建 jdk 8  maven 最新版本
+        uses: docker/build-push-action@v2
+        with:
+          context: adoptium-maven/
+          file: adoptium-maven/Dockerfile-debian-3.8.6-8
+          platforms: linux/amd64
+          push: true
+          tags: |
+            wumingq/apache-maven:debian-3.8.6-adoptiumjdk8
+            registry.cn-hangzhou.aliyuncs.com/wumingq/apache-maven:debian-3.8.6-adoptiumjdk8
 
 
 
