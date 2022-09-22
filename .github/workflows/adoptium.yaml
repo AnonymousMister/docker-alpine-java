@@ -90,6 +90,7 @@ jobs:
           push: true
           tags: |
             wumingq/adoptiumjdk:debian-8u345-jdk
+            registry.cn-hangzhou.aliyuncs.com/wumingq/adoptiumjdk:8u275-jdk-rb
             registry.cn-hangzhou.aliyuncs.com/wumingq/adoptiumjdk:debian-8u345-jdk
 
 
